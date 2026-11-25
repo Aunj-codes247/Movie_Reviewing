@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%block content%}
+
+    <form action="{{ url_for('inside.login') }}" method="POST" class="form">
+
+        {{ form.hidden_tag() }}
+        <!-- {{ form.name.label(class = "Name") }} -->
+        
+        {{ form.name (placeholder = "name")}}
+        <br>
+        <!-- {{ form.name.label(class = "form-label") }} -->
+        {{ form.password (placeholder = "password")}}
+
+        <br>
+        <!-- {{ form.name.label(class = "email") }} -->
+        {{ form.email (placeholder = "eamil")}}
+
+        <br>
+        <!-- <input type="text" name="name" placeholder="name" value="{{name if name}}">
+     
+      
+        
+        <input type="password" name="password" placeholder="enter your password" value = "{{password if password}}">
+        <input type="email" name="email" placeholder="enter your email" value="{{email if email}}"> -->
+        
+    
+
+    <button type="submit" class="submit">sumbit</button>
+
+    </form>
+
+    {%if message%}
+    <p>{{message}}</p>
+
+    {%endif%}
+    
+    {%endblock%}
+    
+</body>
+</html>
